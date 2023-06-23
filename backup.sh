@@ -1,0 +1,1 @@
+docker exec db_v0 pg_dump -U koloni -d docker > init.sql

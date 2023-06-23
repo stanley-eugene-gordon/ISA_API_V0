@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  api:
+    container_name: api_v0
+    build:
+      context: .
+      dockerfile: ./dev.Dockerfile
+    ports:
+      - "5002:5000"
+  db:
+    container_name: db_v0
+    build:
+      context: .
+      dockerfile: ./db.Dockerfile
+    ports:
+      - "5432:5432"
