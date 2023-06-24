@@ -36,10 +36,11 @@ class TextGenerationController:
     def __init__(self):
         pass
 
-    def generate_text(self, transcript, language):
+    def generate_text(self, transcript, language, questions):
         language = language["choices"][0]["message"]["content"].lower()  # Extract language from response object
 
         input_prompt_en = f"""
+        this were the questions asked: {questions}
         The language proficiency of this student is evaluated from their speech Please take note of any bad practices, unusual uses of verbs or poor sentence structures. Here is the speech for evaluation:\n{transcript["text"]}
         \nIn your analysis, please ensure to include the following structured response:
         1. Findings: List the notable observations such as bad practices, unusual uses of verbs, and flawed sentence structures. 
@@ -49,6 +50,7 @@ class TextGenerationController:
         """
 
         input_prompt_fr = f"""
+        this were the questions asked: {questions}
         La compétence linguistique de cet étudiant est évaluée à partir de son discours. Veuillez prendre note de toute mauvaise pratique, utilisation inhabituelle des verbes ou structures de phrases médiocres. Voici le discours à évaluer :\n{transcript["text"]}
         \nDans votre analyse, veuillez inclure la réponse structurée suivante:
         1. Observations : Énumérez les observations notables comme les mauvaises pratiques, les usages inhabituels des verbes et les structures de phrases défectueuses.
@@ -58,6 +60,7 @@ class TextGenerationController:
         """
 
         input_prompt_es = f"""
+        this were the questions asked: {questions}
         La competencia lingüística de este estudiante se evalúa a partir de su discurso. Tenga en cuenta cualquier mala práctica, uso inusual de verbos o estructuras de frases pobres. Aquí está el discurso para la evaluación:\n{transcript["text"]}
         \nEn su análisis, asegúrese de incluir la siguiente respuesta estructurada:
         1. Hallazgos: Enumere las observaciones notables como malas prácticas, usos inusuales de verbos y estructuras de frases defectuosas.
