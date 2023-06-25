@@ -50,7 +50,7 @@ class TextGenerationController:
         """
 
         input_prompt_fr = f"""
-        this were the questions asked: {questions}
+        es questions posées sont les suivantes: {questions}
         La compétence linguistique de cet étudiant est évaluée à partir de son discours. Veuillez prendre note de toute mauvaise pratique, utilisation inhabituelle des verbes ou structures de phrases médiocres. Voici le discours à évaluer :\n{transcript["text"]}
         \nDans votre analyse, veuillez inclure la réponse structurée suivante:
         1. Observations : Énumérez les observations notables comme les mauvaises pratiques, les usages inhabituels des verbes et les structures de phrases défectueuses.
@@ -60,7 +60,7 @@ class TextGenerationController:
         """
 
         input_prompt_es = f"""
-        this were the questions asked: {questions}
+        Estas fueron las preguntas: {questions}
         La competencia lingüística de este estudiante se evalúa a partir de su discurso. Tenga en cuenta cualquier mala práctica, uso inusual de verbos o estructuras de frases pobres. Aquí está el discurso para la evaluación:\n{transcript["text"]}
         \nEn su análisis, asegúrese de incluir la siguiente respuesta estructurada:
         1. Hallazgos: Enumere las observaciones notables como malas prácticas, usos inusuales de verbos y estructuras de frases defectuosas.

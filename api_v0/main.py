@@ -7,18 +7,17 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
-app.include_router(central_router, prefix="/v2")
+app.include_router(central_router, prefix="/v0")
 
 origins = [
     "*",
-    "http://localhost:3000",
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 

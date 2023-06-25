@@ -1,6 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, Form
 import os
-import openai
 from .controller import AudioController, TranscriptController, TextGenerationController
 from helpers.openai_connection import generate_text
 
@@ -19,6 +18,8 @@ async def evaluate_speech(file: UploadFile = File(...), questions: str = Form(..
     response = text_generation_controller.generate_text(transcript, language, questions)
 
     if os.path.exists(audio_file_path):
+        with open(audio_file_path, 'r') as file:
+            os.close(file.fileno())
         os.remove(audio_file_path)
 
     return response
