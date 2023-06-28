@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.11
 
 WORKDIR /code
 ENV PYTHONDONTWRITEBYTECODE 1
