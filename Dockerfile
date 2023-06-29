@@ -13,7 +13,6 @@ RUN python3 -m pip install -r requirements.txt
 
 # Copy code
 COPY api_v0/ code/
-COPY .env .env
 
 EXPOSE 5000
 
