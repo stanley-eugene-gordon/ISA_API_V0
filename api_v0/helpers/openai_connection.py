@@ -18,5 +18,5 @@ def transcribe_audio(audio_file_path):
 
 
 def generate_text(input_prompt):
-    response = openai.ChatCompletion.create(model="gpt-4-32k-0613", messages=[{"role": "assistant", "content": input_prompt}])
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo-0613", messages=[{"role": "assistant", "content": input_prompt}])
     return response
